@@ -1,6 +1,8 @@
 # INF1407-Trabalho-1
 Repositório para a disciplina INF1407 - Prog Web(2021.2)
 
+Link GitHub: https://github.com/alexandrabugarin/INF1407_T1.git
+
 Componentes:
 - Alexandra Bugarin – 1521542
 - Thiago Nicácio - 1411188
