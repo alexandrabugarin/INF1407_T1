@@ -1,4 +1,4 @@
-from sys import argv, stderr, exit
+from sys import exit
 from os import abort
 from internet import *
 from config import PORT, DEFAULT_PAGES, DELAY, LOCAL_STORAGE_PATH
@@ -57,7 +57,17 @@ def openfile(path):
     f.close()
     return body 
 
+def verifyConfig(): 
+    if (isinstance(PORT,int) and isinstance(DEFAULT_PAGES,list) and isinstance(LOCAL_STORAGE_PATH,str) and isinstance(DELAY, int)):
+        return True
+    else: 
+        return False
+
 def main():
+    if(not verifyConfig()):
+        print("Arquivo de configuração não existe ou faltam variaveis")
+        abort()
+
     hostAddress = getHostAddress(PORT)
     fd = criaSocket(hostAddress)
     fd.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
